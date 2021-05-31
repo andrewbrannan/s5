@@ -40,8 +40,8 @@ trigger: set_project
 	gcloud scheduler jobs run check-stock-job
 
 undeploy:
-	rm setup
-	-gcloud functions delete runStockChecker
+	-rm setup
+	-gcloud functions delete runStockChecker --region=${GCLOUD_PROJECT_REGION}
 	terraform destroy -var="check_url=${CHECK_URL}" -var="request_check_topic=${TOPIC_NAME}" -var="gcloud_project_name=${GCLOUD_PROJECT_NAME}" -var="gcloud_project_region=${GCLOUD_PROJECT_REGION}" -var="gcloud_project_zone=${GCLOUD_PROJECT_ZONE}"
 
 install:
