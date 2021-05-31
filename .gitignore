@@ -1,0 +1,11 @@
+node_modules/
+.vscode/
+.env
+.terraform
+*.tfstate
+*.backup
+setup
+todo.txt
+# GCP service account creds for development
+service_account.json
+.eslintrc.json
